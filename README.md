@@ -2,6 +2,9 @@
 
 Build photomosaics from NES box art — each tile is a box art image matched by average colour.
 
+**Try it live in your browser:** [adamstirtan.github.io/photomosaic-nes](https://adamstirtan.github.io/photomosaic-nes/)
+— your webcam rebuilt in real time out of the same 250 box arts (WebGL2, nothing leaves your device).
+
 ## Examples
 
 **Super Mario Bros. 3 box art, rebuilt out of 250 NES box arts** (994x1360, 32 x 43 tiles at 32px, `--scale 2 --pick-from 5`):
