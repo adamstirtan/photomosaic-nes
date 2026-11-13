@@ -39,6 +39,10 @@ The source image itself, for comparison:
 
 ![A 90s kid at his NES setup as a photomosaic of NES box art](samples/90s-nes-kid-mosaic.png)
 
+**Link overlooking Hyrule (Breath of the Wild key art), rebuilt out of the same 695 box arts** (1920x1080, 60 x 34 tiles at 32px, `--scale 0.5 --pick-from 12`):
+
+![Link overlooking Hyrule as a photomosaic of NES box art](samples/breath-of-the-wild-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
