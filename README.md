@@ -47,6 +47,10 @@ The source image itself, for comparison:
 
 ![Link overlooking Hyrule as an ultrawide photomosaic wallpaper](samples/breath-of-the-wild-ultrawide-mosaic.png)
 
+**A Super Mario Bros. scene, rebuilt out of the same 695 box arts** (1212x692, 51 x 29 tiles at 24px, `--scale 1 --tile-size 24 --pick-from 12`):
+
+![A Super Mario Bros. scene as a photomosaic of NES box art](samples/mario-bros-scene-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
