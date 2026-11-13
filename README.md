@@ -3,11 +3,11 @@
 Build photomosaics from NES box art — each tile is a box art image matched by average colour.
 
 **Try it live in your browser:** [adamstirtan.github.io/photomosaic-nes](https://adamstirtan.github.io/photomosaic-nes/)
-— your webcam rebuilt in real time out of the same 250 box arts (WebGL2, nothing leaves your device).
+— your webcam rebuilt in real time out of the same 695 box arts (WebGL2, nothing leaves your device).
 
 ## Examples
 
-**Super Mario Bros. 3 box art, rebuilt out of 250 NES box arts** (994x1360, 32 x 43 tiles at 32px, `--scale 2 --pick-from 5`):
+**Super Mario Bros. 3 box art, rebuilt out of 695 NES box arts** (994x1360, 32 x 43 tiles at 32px, `--scale 2 --pick-from 5`):
 
 ![Super Mario Bros. 3 box art as a photomosaic of NES box art](samples/mario3-mosaic.png)
 
@@ -15,7 +15,7 @@ The source image itself, for comparison:
 
 ![Super Mario Bros. 3 box art, the source image](samples/mario3-source.png)
 
-**The NES console, rebuilt out of the same 250 box arts** (2780x1510, 58 x 32 tiles at 48px, `--scale 0.5 --pick-from 5`):
+**The NES console, rebuilt out of the same 695 box arts** (2780x1510, 58 x 32 tiles at 48px, `--scale 0.5 --pick-from 12`):
 
 ![NES console as a photomosaic of NES box art](samples/nes-mosaic.png)
 
@@ -88,9 +88,12 @@ That produces a 640x480 mosaic (14 x 10 tiles at 48px). Try
 
 ## Try it with real box art
 
-The `boxart/` folder holds 250 actual NES box arts from
-libretro-thumbnails (the set RetroArch uses), used with permission.
-If you clone this repo without them, re-fetch the same set with:
+The `boxart/` folder holds 695 NES box arts — the complete licensed
+North American library, as uniform 560x800 scans, used with permission.
+If you clone this repo without them, `./fetch-boxart.sh` downloads an
+equivalent working set from libretro-thumbnails (the set RetroArch uses,
+listed in `boxart-urls.txt`); the file names differ from the curated set
+committed here, but the tool only cares that the images are in `boxart/`:
 
 ```sh
 ./fetch-boxart.sh
@@ -113,13 +116,13 @@ That makes a 994x1360 mosaic (32 x 43 tiles) in about 9 seconds.
 **The NES console** — a public-domain photo of the console and
 controller (`samples/nes-console-source.jpg`, 5560x3020, by Evan-Amos
 via Wikimedia Commons). It works, but its big plain-white background
-repeats the whitest box arts a lot — `--pick-from 5` helps, and a
+repeats the whitest box arts a lot — `--pick-from 12` helps, and a
 colourful source like Mario 3 works better:
 
 ```sh
 dotnet run --project src/PhotomosaicNes -c Release -- \
   samples/nes-console-source.jpg --tiles boxart \
-  --output samples/nes-mosaic.png --scale 0.5 --pick-from 5
+  --output samples/nes-mosaic.png --scale 0.5 --pick-from 12
 ```
 
 That makes a 2780x1510 mosaic (58 x 32 tiles) in about 10 seconds.

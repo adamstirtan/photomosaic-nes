@@ -13,7 +13,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BOXART = os.path.join(ROOT, "boxart")
 DOCS = os.path.join(ROOT, "docs")
 TILE = 64
-COLS = 16
+COLS = 28
 
 files = sorted(f for f in os.listdir(BOXART)
                if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp", ".bmp")))
