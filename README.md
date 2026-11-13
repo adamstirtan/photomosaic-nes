@@ -23,6 +23,10 @@ The source image itself, for comparison:
 
 ![Super Mario Bros. 3 poster as a photomosaic of NES box art](samples/mario3-poster-mosaic.png)
 
+**Power Glove instructions cover, rebuilt out of the same 695 box arts** (877x801, 28 x 26 tiles at 32px, `--scale 1 --pick-from 5`):
+
+![Power Glove instructions cover as a photomosaic of NES box art](samples/power-glove-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
