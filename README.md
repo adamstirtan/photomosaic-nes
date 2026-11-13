@@ -43,6 +43,10 @@ The source image itself, for comparison:
 
 ![Link overlooking Hyrule as a photomosaic of NES box art](samples/breath-of-the-wild-mosaic.png)
 
+**The same key art as a 3440x1440 ultrawide wallpaper, with even more cartridges** (160 x 69 tiles at 24px, `--scale 1 --tile-size 24 --pick-from 12`, cropped to 3440x1440):
+
+![Link overlooking Hyrule as an ultrawide photomosaic wallpaper](samples/breath-of-the-wild-ultrawide-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
