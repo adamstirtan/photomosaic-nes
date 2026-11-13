@@ -35,6 +35,10 @@ The source image itself, for comparison:
 
 ![Lucas from The Wizard wearing the Power Glove as a photomosaic of NES box art](samples/lucas-power-glove-mosaic.png)
 
+**A 90s kid at his NES setup, rebuilt out of the same 695 box arts** (1100x1084, 35 x 34 tiles at 32px, `--scale 2 --pick-from 12`):
+
+![A 90s kid at his NES setup as a photomosaic of NES box art](samples/90s-nes-kid-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
