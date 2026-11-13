@@ -31,6 +31,10 @@ The source image itself, for comparison:
 
 ![The Wizard movie poster as a photomosaic of NES box art](samples/wizard-poster-mosaic.png)
 
+**Lucas from The Wizard wearing the Power Glove, rebuilt out of the same 695 box arts** (866x706, 28 x 23 tiles at 32px, `--scale 1 --pick-from 12`):
+
+![Lucas from The Wizard wearing the Power Glove as a photomosaic of NES box art](samples/lucas-power-glove-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
