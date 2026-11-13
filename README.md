@@ -20,6 +20,20 @@ The source image itself, for comparison:
 
 ![Sunset test mosaic](samples/test-mosaic.png)
 
+## Gameplay screenshots as mosaics
+
+In-game screenshots work too — even at native NES resolution (256x224),
+a high `--scale` turns them into print-size mosaics. Both of these are
+2048px wide (`--scale 8 --tile-size 32 --pick-from 5`):
+
+**Super Mario Bros. 3 — Raccoon Mario flying over World 1** (2048x1792, 64 x 56 tiles):
+
+![Super Mario Bros. 3 gameplay screenshot as a photomosaic](samples/mario3-snap-mosaic.png)
+
+**Mike Tyson's Punch-Out!! — Little Mac vs. Glass Joe** (2048x1920, 64 x 60 tiles):
+
+![Mike Tyson's Punch-Out!! gameplay screenshot as a photomosaic](samples/punchout-mosaic.png)
+
 ## How it works
 
 Every box art image is reduced to its average colour. The source image is
