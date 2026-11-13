@@ -19,6 +19,10 @@ The source image itself, for comparison:
 
 ![NES console as a photomosaic of NES box art](samples/nes-mosaic.png)
 
+**Super Mario Bros. 3 poster, rebuilt out of the same 695 box arts** (1200x1800, 38 x 57 tiles at 32px, `--scale 1 --pick-from 5`):
+
+![Super Mario Bros. 3 poster as a photomosaic of NES box art](samples/mario3-poster-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
