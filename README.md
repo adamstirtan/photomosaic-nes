@@ -27,6 +27,10 @@ The source image itself, for comparison:
 
 ![Power Glove instructions cover as a photomosaic of NES box art](samples/power-glove-mosaic.png)
 
+**The Wizard movie poster, rebuilt out of the same 695 box arts** (1000x1426, 32 x 45 tiles at 32px, `--scale 1 --pick-from 5`):
+
+![The Wizard movie poster as a photomosaic of NES box art](samples/wizard-poster-mosaic.png)
+
 **First test: a sunset, rebuilt out of 24 generated stand-in box arts** (640x480, 14 x 10 tiles at 48px):
 
 ![Sunset test mosaic](samples/test-mosaic.png)
