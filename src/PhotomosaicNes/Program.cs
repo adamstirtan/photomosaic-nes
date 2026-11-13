@@ -17,6 +17,12 @@
 //                    source region it stands in (0 = raw box art,
 //                    1 = solid colour). Default: 0.25 — keeps the box art
 //                    visible while making the big picture read clearly.
+//   --pick-from <n>  Pick randomly from the n closest-matching tiles
+//                    instead of always the single best match. Default: 1.
+//                    Higher values (e.g. 5) break up the repetition you
+//                    get in flat areas of the source — a plain white
+//                    background otherwise fills with copies of the single
+//                    whitest box art. Seeded, so runs are reproducible.
 //
 // How it works: every tile image is reduced to its average colour, the
 // source image is split into a grid of tile-sized cells, and each cell is
@@ -44,6 +50,7 @@ if (argsList.Count == 0 || argsList.Contains("--help") || argsList.Contains("-h"
           --scale <factor> Output size vs source. Default: 1.0
           --tile-size <px> Tile size in pixels. Default: 48
           --tint <0..1>    Tint tiles toward target colour. Default: 0.25
+          --pick-from <n>  Random pick from n closest tiles. Default: 1
         """);
     return argsList.Count == 0 ? 1 : 0;
 }
@@ -54,6 +61,8 @@ string outputPath = Option("--output") ?? "mosaic.png";
 double scale = double.TryParse(Option("--scale"), out var s) ? s : 1.0;
 int tileSize = int.TryParse(Option("--tile-size"), out var t) ? t : 48;
 double tint = double.TryParse(Option("--tint"), out var tn) ? tn : 0.25;
+int pickFrom = int.TryParse(Option("--pick-from"), out var pf) ? pf : 1;
+var rng = new Random(42); // fixed seed: same inputs, same mosaic
 
 string? Option(string name)
 {
@@ -71,9 +80,9 @@ if (!Directory.Exists(tilesDir))
     Console.Error.WriteLine($"Tiles directory not found: {tilesDir}");
     return 1;
 }
-if (scale <= 0 || tileSize <= 0 || tint < 0 || tint > 1)
+if (scale <= 0 || tileSize <= 0 || tint < 0 || tint > 1 || pickFrom < 1)
 {
-    Console.Error.WriteLine("Invalid option: --scale and --tile-size must be > 0, --tint must be 0..1.");
+    Console.Error.WriteLine("Invalid option: --scale and --tile-size must be > 0, --tint must be 0..1, --pick-from must be >= 1.");
     return 1;
 }
 
@@ -143,7 +152,11 @@ for (int row = 0; row < rows; row++)
         sh = Math.Min(sh, source.Height - sy);
 
         var target = AverageColor(source, sx, sy, sw, sh);
-        var best = tiles.MinBy(t => ColorDistance(t.Average, target))!;
+        var best = pickFrom == 1
+            ? tiles.MinBy(t => ColorDistance(t.Average, target))!
+            : tiles.OrderBy(t => ColorDistance(t.Average, target))
+                   .Take(pickFrom)
+                   .ElementAt(rng.Next(Math.Min(pickFrom, tiles.Count)));
 
         var dest = new Point(col * tileSize, row * tileSize);
         mosaic.Mutate(ctx => ctx.DrawImage(best.Image, dest, 1f));
